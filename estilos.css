@@ -164,7 +164,7 @@ main {
 /* estilos do exercício dos aliens */
 #aliens p {
   white-space: nowrap;
-  height: 1em;
+  height: 1.5em;
   overflow: hidden;
   text-overflow: ellipsis;
 }

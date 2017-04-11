@@ -9,3 +9,7 @@ const servidorDasImagens = 'https://fegemo.github.io/cefet-web/images/',
     'philae-67-picture.jpg',
     'philae-collecting.jpg'
   ];
+
+  let anterior = document.querySelector('#galeria .anterior');	
+  let proximo = document.querySelector('#galeria .proximo');	
+  let imagem = document.querySelector('#galeria img');	
