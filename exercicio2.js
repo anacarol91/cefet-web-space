@@ -1,7 +1,7 @@
 // Faça o exercício da galeria de imagens aqui
 // Este arquivo ainda não está incluído no arquivo HTML
 
-const servidorDasImagens = 'https://fegemo.github.io/cefet-web/images/',
+const server = 'https://fegemo.github.io/cefet-web/images/',
   todasAsImagens = [
     'philae-parts.jpg',
     'philae-rosetta.jpg',
@@ -10,6 +10,23 @@ const servidorDasImagens = 'https://fegemo.github.io/cefet-web/images/',
     'philae-collecting.jpg'
   ];
 
-  let anterior = document.querySelector('#galeria .anterior');	
-  let proximo = document.querySelector('#galeria .proximo');	
-  let imagem = document.querySelector('#galeria img');	
+  let index = 0;
+  let anterior = document.querySelector('#galeria #anterior');
+  let proximo = document.querySelector('#galeria #proximo');
+
+  proximo.addEventListener('click', function(){
+    let imagem = document.querySelector('#galeria img');
+    index = index === todasAsImagens.length - 1 ? 0 : index + 1;
+    imagem.src = server + todasAsImagens[index];
+
+    console.log('index: ' + index + ' | imagem: ' + imagem.src);
+  });
+
+  anterior.addEventListener('click', function(){
+    let imagem = document.querySelector('#galeria img');
+
+    index = index === 0 ? todasAsImagens.length - 1 : index - 1;
+    imagem.src = server + todasAsImagens[index];
+
+    console.log('index: ' + index + ' | imagem: ' + imagem.src);
+  });
